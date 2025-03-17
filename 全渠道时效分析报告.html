@@ -1,0 +1,177 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>全渠道时效分析报告</title>
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            <style>
+                body { 
+                    font-family: Segoe UI;
+                    margin: 2rem;
+                    background: #f8f9fa;
+                }
+                .dashboard {
+                    display: grid;
+                    grid-template-columns: 250px 1fr;
+                    gap: 2rem;
+                }
+                .filters {
+                    background: white;
+                    padding: 1.5rem;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                }
+                .chart {
+                    background: white;
+                    padding: 1.5rem;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                    margin-bottom: 2rem;
+                }
+                select {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #dee2e6;
+                    border-radius: 4px;
+                    margin: 8px 0;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 2rem;
+                }
+                th, td {
+                    padding: 12px;
+                    text-align: left;
+                    border-bottom: 1px solid #dee2e6;
+                }
+                th {
+                    background-color: #e9ecef;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>全渠道时效分析报告（2025-03-13 23:17）</h1>
+            
+            <div class="dashboard">
+                <!-- 筛选面板 -->
+                <div class="filters">
+                    <h3>数据筛选</h3>
+                    <label>选择渠道：</label>
+                    <select id="channelFilter">
+                        <option value="all">全部渠道</option>
+                        <option value="DHL">DHL</option><option value="FEDEX">FEDEX</option><option value="LM-UPS_MI">LM-UPS_MI</option><option value="Ontrac">Ontrac</option><option value="UPS EXPRESS">UPS EXPRESS</option><option value="UPS SAVER">UPS SAVER</option><option value="USPS">USPS</option><option value="YFH-Logistics">YFH-Logistics</option>
+                    </select>
+                </div>
+
+                <!-- 可视化区域 -->
+                <div>
+                    <div class="chart" id="timeChart">
+                        <div>                            <div id="f4e1d990-15c4-4a89-b0bb-4769048e57b8" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("f4e1d990-15c4-4a89-b0bb-4769048e57b8")) {                    Plotly.newPlot(                        "f4e1d990-15c4-4a89-b0bb-4769048e57b8",                        [{"alignmentgroup":"True","hovertemplate":"variable=\u5e73\u5747\u59a5\u6295\u65f6\u95f4\u003cbr\u003e\u6e20\u9053=%{x}\u003cbr\u003e\u5929\u6570=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"\u5e73\u5747\u59a5\u6295\u65f6\u95f4","marker":{"color":"rgb(102, 197, 204)","pattern":{"shape":""}},"name":"\u5e73\u5747\u59a5\u6295\u65f6\u95f4","offsetgroup":"\u5e73\u5747\u59a5\u6295\u65f6\u95f4","orientation":"v","showlegend":true,"textposition":"auto","x":["DHL","FEDEX","LM-UPS_MI","Ontrac","UPS EXPRESS","UPS SAVER","USPS","YFH-Logistics"],"xaxis":"x","y":[3.84,6.31,4.96,3.34,4.75,4.3,4.92,8.26],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"variable=\u5e73\u5747\u53d1\u8d27\u65f6\u6548\u003cbr\u003e\u6e20\u9053=%{x}\u003cbr\u003e\u5929\u6570=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"\u5e73\u5747\u53d1\u8d27\u65f6\u6548","marker":{"color":"rgb(246, 207, 113)","pattern":{"shape":""}},"name":"\u5e73\u5747\u53d1\u8d27\u65f6\u6548","offsetgroup":"\u5e73\u5747\u53d1\u8d27\u65f6\u6548","orientation":"v","showlegend":true,"textposition":"auto","x":["DHL","FEDEX","LM-UPS_MI","Ontrac","UPS EXPRESS","UPS SAVER","USPS","YFH-Logistics"],"xaxis":"x","y":[0.37,0.8,0.84,0.52,0.43,0.0,0.67,0.33],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"\u6e20\u9053"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"\u5929\u6570"}},"legend":{"title":{"text":"variable"},"tracegroupgap":0},"title":{"text":"\u6e20\u9053\u65f6\u6548\u5bf9\u6bd4\u5206\u6790"},"barmode":"group"},                        {"responsive": true}                    )                };                            </script>        </div>
+                    </div>
+                    <div class="chart" id="scatterChart">
+                        <div>                            <div id="ef7e88be-2210-49c7-963d-fb16285eee61" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("ef7e88be-2210-49c7-963d-fb16285eee61")) {                    Plotly.newPlot(                        "ef7e88be-2210-49c7-963d-fb16285eee61",                        [{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003e\u6e20\u9053=DHL\u003cbr\u003e\u5e73\u5747\u53d1\u8d27\u65f6\u6548=%{x}\u003cbr\u003e\u8fbe\u6807\u7387=%{y}\u003cbr\u003e\u5e73\u5747\u59a5\u6295\u65f6\u95f4=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["DHL"],"legendgroup":"DHL","marker":{"color":"#636efa","size":[3.84],"sizemode":"area","sizeref":0.020649999999999998,"symbol":"circle"},"mode":"markers","name":"DHL","orientation":"v","showlegend":true,"x":[0.37],"xaxis":"x","y":[0.91],"yaxis":"y","type":"scatter"},{"hovertemplate":"\u6e20\u9053=DHL\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"DHL","marker":{"color":"#636efa","symbol":"circle"},"mode":"lines","name":"DHL","showlegend":false,"xaxis":"x","yaxis":"y","type":"scatter"},{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003e\u6e20\u9053=FEDEX\u003cbr\u003e\u5e73\u5747\u53d1\u8d27\u65f6\u6548=%{x}\u003cbr\u003e\u8fbe\u6807\u7387=%{y}\u003cbr\u003e\u5e73\u5747\u59a5\u6295\u65f6\u95f4=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["FEDEX"],"legendgroup":"FEDEX","marker":{"color":"#EF553B","size":[6.31],"sizemode":"area","sizeref":0.020649999999999998,"symbol":"circle"},"mode":"markers","name":"FEDEX","orientation":"v","showlegend":true,"x":[0.8],"xaxis":"x","y":[0.6],"yaxis":"y","type":"scatter"},{"hovertemplate":"\u6e20\u9053=FEDEX\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"FEDEX","marker":{"color":"#EF553B","symbol":"circle"},"mode":"lines","name":"FEDEX","showlegend":false,"xaxis":"x","yaxis":"y","type":"scatter"},{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003e\u6e20\u9053=LM-UPS_MI\u003cbr\u003e\u5e73\u5747\u53d1\u8d27\u65f6\u6548=%{x}\u003cbr\u003e\u8fbe\u6807\u7387=%{y}\u003cbr\u003e\u5e73\u5747\u59a5\u6295\u65f6\u95f4=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["LM-UPS_MI"],"legendgroup":"LM-UPS_MI","marker":{"color":"#00cc96","size":[4.96],"sizemode":"area","sizeref":0.020649999999999998,"symbol":"circle"},"mode":"markers","name":"LM-UPS_MI","orientation":"v","showlegend":true,"x":[0.84],"xaxis":"x","y":[0.8],"yaxis":"y","type":"scatter"},{"hovertemplate":"\u6e20\u9053=LM-UPS_MI\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"LM-UPS_MI","marker":{"color":"#00cc96","symbol":"circle"},"mode":"lines","name":"LM-UPS_MI","showlegend":false,"xaxis":"x","yaxis":"y","type":"scatter"},{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003e\u6e20\u9053=Ontrac\u003cbr\u003e\u5e73\u5747\u53d1\u8d27\u65f6\u6548=%{x}\u003cbr\u003e\u8fbe\u6807\u7387=%{y}\u003cbr\u003e\u5e73\u5747\u59a5\u6295\u65f6\u95f4=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Ontrac"],"legendgroup":"Ontrac","marker":{"color":"#ab63fa","size":[3.34],"sizemode":"area","sizeref":0.020649999999999998,"symbol":"circle"},"mode":"markers","name":"Ontrac","orientation":"v","showlegend":true,"x":[0.52],"xaxis":"x","y":[0.96],"yaxis":"y","type":"scatter"},{"hovertemplate":"\u6e20\u9053=Ontrac\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Ontrac","marker":{"color":"#ab63fa","symbol":"circle"},"mode":"lines","name":"Ontrac","showlegend":false,"xaxis":"x","yaxis":"y","type":"scatter"},{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003e\u6e20\u9053=UPS EXPRESS\u003cbr\u003e\u5e73\u5747\u53d1\u8d27\u65f6\u6548=%{x}\u003cbr\u003e\u8fbe\u6807\u7387=%{y}\u003cbr\u003e\u5e73\u5747\u59a5\u6295\u65f6\u95f4=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["UPS EXPRESS"],"legendgroup":"UPS EXPRESS","marker":{"color":"#FFA15A","size":[4.75],"sizemode":"area","sizeref":0.020649999999999998,"symbol":"circle"},"mode":"markers","name":"UPS EXPRESS","orientation":"v","showlegend":true,"x":[0.43],"xaxis":"x","y":[0.71],"yaxis":"y","type":"scatter"},{"hovertemplate":"\u6e20\u9053=UPS EXPRESS\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"UPS EXPRESS","marker":{"color":"#FFA15A","symbol":"circle"},"mode":"lines","name":"UPS EXPRESS","showlegend":false,"xaxis":"x","yaxis":"y","type":"scatter"},{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003e\u6e20\u9053=UPS SAVER\u003cbr\u003e\u5e73\u5747\u53d1\u8d27\u65f6\u6548=%{x}\u003cbr\u003e\u8fbe\u6807\u7387=%{y}\u003cbr\u003e\u5e73\u5747\u59a5\u6295\u65f6\u95f4=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["UPS SAVER"],"legendgroup":"UPS SAVER","marker":{"color":"#19d3f3","size":[4.3],"sizemode":"area","sizeref":0.020649999999999998,"symbol":"circle"},"mode":"markers","name":"UPS SAVER","orientation":"v","showlegend":true,"x":[0.0],"xaxis":"x","y":[0.83],"yaxis":"y","type":"scatter"},{"hovertemplate":"\u6e20\u9053=UPS SAVER\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"UPS SAVER","marker":{"color":"#19d3f3","symbol":"circle"},"mode":"lines","name":"UPS SAVER","showlegend":false,"xaxis":"x","yaxis":"y","type":"scatter"},{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003e\u6e20\u9053=USPS\u003cbr\u003e\u5e73\u5747\u53d1\u8d27\u65f6\u6548=%{x}\u003cbr\u003e\u8fbe\u6807\u7387=%{y}\u003cbr\u003e\u5e73\u5747\u59a5\u6295\u65f6\u95f4=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["USPS"],"legendgroup":"USPS","marker":{"color":"#FF6692","size":[4.92],"sizemode":"area","sizeref":0.020649999999999998,"symbol":"circle"},"mode":"markers","name":"USPS","orientation":"v","showlegend":true,"x":[0.67],"xaxis":"x","y":[0.76],"yaxis":"y","type":"scatter"},{"hovertemplate":"\u6e20\u9053=USPS\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"USPS","marker":{"color":"#FF6692","symbol":"circle"},"mode":"lines","name":"USPS","showlegend":false,"xaxis":"x","yaxis":"y","type":"scatter"},{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003e\u6e20\u9053=YFH-Logistics\u003cbr\u003e\u5e73\u5747\u53d1\u8d27\u65f6\u6548=%{x}\u003cbr\u003e\u8fbe\u6807\u7387=%{y}\u003cbr\u003e\u5e73\u5747\u59a5\u6295\u65f6\u95f4=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["YFH-Logistics"],"legendgroup":"YFH-Logistics","marker":{"color":"#B6E880","size":[8.26],"sizemode":"area","sizeref":0.020649999999999998,"symbol":"circle"},"mode":"markers","name":"YFH-Logistics","orientation":"v","showlegend":true,"x":[0.33],"xaxis":"x","y":[0.19],"yaxis":"y","type":"scatter"},{"hovertemplate":"\u6e20\u9053=YFH-Logistics\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"YFH-Logistics","marker":{"color":"#B6E880","symbol":"circle"},"mode":"lines","name":"YFH-Logistics","showlegend":false,"xaxis":"x","yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"\u5e73\u5747\u53d1\u8d27\u65f6\u6548"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"\u8fbe\u6807\u7387"}},"legend":{"title":{"text":"\u6e20\u9053"},"tracegroupgap":0,"itemsizing":"constant"},"title":{"text":"\u65f6\u6548\u5173\u8054\u5206\u6790"}},                        {"responsive": true}                    )                };                            </script>        </div>
+                    </div>
+                    
+                    <h3>详细数据</h3>
+                    <table class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>渠道</th>
+      <th>平均妥投时间</th>
+      <th>达标率</th>
+      <th>平均发货时效</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DHL</td>
+      <td>3.84</td>
+      <td>0.91</td>
+      <td>0.37</td>
+    </tr>
+    <tr>
+      <td>FEDEX</td>
+      <td>6.31</td>
+      <td>0.60</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <td>LM-UPS_MI</td>
+      <td>4.96</td>
+      <td>0.80</td>
+      <td>0.84</td>
+    </tr>
+    <tr>
+      <td>Ontrac</td>
+      <td>3.34</td>
+      <td>0.96</td>
+      <td>0.52</td>
+    </tr>
+    <tr>
+      <td>UPS EXPRESS</td>
+      <td>4.75</td>
+      <td>0.71</td>
+      <td>0.43</td>
+    </tr>
+    <tr>
+      <td>UPS SAVER</td>
+      <td>4.30</td>
+      <td>0.83</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>USPS</td>
+      <td>4.92</td>
+      <td>0.76</td>
+      <td>0.67</td>
+    </tr>
+    <tr>
+      <td>YFH-Logistics</td>
+      <td>8.26</td>
+      <td>0.19</td>
+      <td>0.33</td>
+    </tr>
+  </tbody>
+</table>
+                </div>
+            </div>
+
+            <!-- 嵌入分析数据 -->
+            <script type="application/json" id="analysisData">
+                [{"渠道":"DHL","平均妥投时间":3.84,"达标率":0.91,"平均发货时效":0.37},{"渠道":"FEDEX","平均妥投时间":6.31,"达标率":0.6,"平均发货时效":0.8},{"渠道":"LM-UPS_MI","平均妥投时间":4.96,"达标率":0.8,"平均发货时效":0.84},{"渠道":"Ontrac","平均妥投时间":3.34,"达标率":0.96,"平均发货时效":0.52},{"渠道":"UPS EXPRESS","平均妥投时间":4.75,"达标率":0.71,"平均发货时效":0.43},{"渠道":"UPS SAVER","平均妥投时间":4.3,"达标率":0.83,"平均发货时效":0.0},{"渠道":"USPS","平均妥投时间":4.92,"达标率":0.76,"平均发货时效":0.67},{"渠道":"YFH-Logistics","平均妥投时间":8.26,"达标率":0.19,"平均发货时效":0.33}]
+            </script>
+
+            <script>
+                // 数据绑定
+                const analysisData = JSON.parse(document.getElementById('analysisData').textContent);
+                const timeChart = document.getElementById('timeChart').querySelector('.plotly-graph-div');
+                const scatterChart = document.getElementById('scatterChart').querySelector('.plotly-graph-div');
+
+                // 筛选器交互逻辑
+                document.getElementById('channelFilter').addEventListener('change', function() {
+                    const filterValue = this.value;
+                    const filteredData = filterValue === 'all' 
+                        ? analysisData 
+                        : analysisData.filter(d => d.渠道 === filterValue);
+                    
+                    // 更新时效对比图
+                    Plotly.restyle(timeChart, {
+                        x: [filteredData.map(d => d.渠道)],
+                        y: [
+                            filteredData.map(d => d.平均妥投时间),
+                            filteredData.map(d => d.平均发货时效)
+                        ]
+                    }, [0, 1]);
+                    
+                    // 更新散点图
+                    Plotly.restyle(scatterChart, {
+                        x: [filteredData.map(d => d.平均发货时效)],
+                        y: [filteredData.map(d => d.达标率)],
+                        'marker.size': [filteredData.map(d => d.平均妥投时间 * 10)]
+                    }, 0);
+                });
+            </script>
+        </body>
+        </html>
+        
